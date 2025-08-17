@@ -6,11 +6,10 @@
     Calcula y muestra la suma de todos los números desde 1 hasta N.
 */
 
-const readline = require('../utils/scanner.js');
-// Aplicación
+import { rl } from '../utils/scanner.mjs';
 
 console.log('Este programa solicita un número y devuelve la suma de todos los números desde 1 hasta el número ingresado')
-readline.question('Ingrese un número: ', (numero) => {
+rl.question('Ingrese un número: ', (numero) => {
     let total = 0;
 
     for (let index = 0; index <= numero; index++) {
@@ -19,4 +18,5 @@ readline.question('Ingrese un número: ', (numero) => {
     }
 
     console.log("La suma total es: " + total);
+    rl.close();
 })

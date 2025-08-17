@@ -6,11 +6,11 @@ Pide al usuario una palabra o frase.
 Determina si se lee igual de izquierda a derecha y de derecha a izquierda (ignora espacios, mayúsculas y tildes).
 */
 
-const readline = require('../utils/scanner');
-const convertirCadena = require('../utils/cadenas');
+import { rl } from '../utils/scanner.mjs';
+import convertirCadena from '../utils/cadenas.mjs';
 
 console.log('Determinar si una palabra es palíndromo.');
-readline.question('Introduce una palabra: ', (palabra) => {
+rl.question('Introduce una palabra: ', (palabra) => {
     let palabra_formateada = convertirCadena(palabra);
 
     let separar_cadena = palabra_formateada.split("");
@@ -24,4 +24,5 @@ readline.question('Introduce una palabra: ', (palabra) => {
     } else {
         console.log("La palabra " +  palabra + " no es un palíndromo.")
     }
+    rl.close();
 })

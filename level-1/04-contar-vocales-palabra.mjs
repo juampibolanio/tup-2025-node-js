@@ -5,12 +5,12 @@ Pide al usuario una palabra o frase.
 
 Cuenta cuántas vocales contiene (considera minúsculas, mayúsculas y vocales con tilde).
 */
-const convertirCadena = require('../utils/cadenas');
-const readline = require('../utils/scanner');
+import { convertirCadena } from '../utils/cadenas.mjs';
+import { rl } from '../utils/scanner.mjs';
 
-const vocales = "aeiouAEIOUáéíóúÁÉÍÓÚ";
+const vocales = "aeiou";
 
-readline.question('Ingrese la palabra: ', (palabra) => {
+rl.question('Ingrese la palabra: ', (palabra) => {
     var palabraFormateada = convertirCadena(palabra);
     var cantidadVocales = 0;
 
@@ -27,7 +27,7 @@ readline.question('Ingrese la palabra: ', (palabra) => {
         console.log('La palabra tiene ' + cantidadVocales + " vocales");
     }
 
-    readline.close();
+    rl.close();
 });
 
 

@@ -6,14 +6,12 @@
     Indica si el número es par o impar.
 */
 
-import { readline } from "../utils/scanner";
-
-// Aplicación
+import { rl } from "../utils/scanner.mjs";
 
 const es_par_o_impar = () => {
     
-    readline.question('Ingrese un número: ', (numero) => {
-        const num = numero;
+    rl.question('Ingrese un número: ', (numero) => {
+        const num = Number(numero);
 
         if ((num % 2) === 0) {
             return console.log('Es par');
@@ -21,6 +19,8 @@ const es_par_o_impar = () => {
         else {
             return console.log('Es impar');
         }
+        
+        rl.close();
     })
 }
 

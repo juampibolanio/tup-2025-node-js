@@ -8,9 +8,9 @@ Convierte esos números en un array.
 Ordena el array de menor a mayor y muéstralo.
 */
 
-const readline = require('../utils/scanner');
+import { rl } from '../utils/scanner.mjs';
 
-readline.question('Introduce varios números separados por coma: ', (numeros) => {
+rl.question('Introduce varios números separados por coma: ', (numeros) => {
     var numeros_array = numeros.split(',');
     var numeros_formateados = [];
 
@@ -23,5 +23,5 @@ readline.question('Introduce varios números separados por coma: ', (numeros) =>
     });
 
     console.log(numeros_formateados);
-    readline.close();
+    rl.close();
 });

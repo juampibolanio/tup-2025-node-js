@@ -7,7 +7,7 @@ Los números primos son aquellos números naturales mayores que 1 que solo tiene
 Muestra todos los números primos que estén dentro de ese rango.
 */
 
-const readline = require('../utils/scanner');
+import { rl } from '../utils/scanner.mjs';
 
 function esPrimo(numero) {
 
@@ -31,10 +31,10 @@ var primer_numero = null;
 var segundo_numero = null;
 var numeros_primos = [];
 console.log('Mostrar los números primos desde un rango determinado. ');
-readline.question('Introduce el número de inicio: ', (numero_inicial) => {
+rl.question('Introduce el número de inicio: ', (numero_inicial) => {
     primer_numero = parseInt(numero_inicial);
 
-    readline.question('Ingresa el número de fin: ', (numero_final) => {
+    rl.question('Ingresa el número de fin: ', (numero_final) => {
         segundo_numero = parseInt(numero_final);
 
         for (let index = numero_inicial; index <= numero_final; index++) {
@@ -53,5 +53,4 @@ readline.question('Introduce el número de inicio: ', (numero_inicial) => {
             console.log("No hay números primos entre estos dos números.");
         }
     });
-    readline.close();
 });
